@@ -1,0 +1,90 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    overflow-x: hidden;
+}
+
+aside {
+    background-color: #000;
+    min-height: 100vh;
+}
+
+.name {
+    font-size: 1.5rem;
+    color: rgb(175, 175, 175);
+}
+
+.personal-img {
+    border-radius: 50%;
+    /* background-color: white; */
+}
+
+.account-link {
+    color: rgb(175, 175, 175);
+    font-size: 1.3rem;
+    transition: 150ms linear;
+}
+
+.account-link:hover {
+    color:#fff;
+    font-size: 1.5rem;
+}
+
+.navbar {
+    margin-top: 20px;
+}
+
+.navbar-nav {
+    width: 100%;
+}
+
+.nav-link {
+    color:rgb(175, 175, 175);
+    margin-left: 20px;
+    transition: 250ms linear;
+}
+
+.nav-link:hover {
+    background-color: #fff;
+    color:#000;
+    font-size: 1.3rem;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+/* footer {
+    color: rgb(175, 175, 175);
+    height: 100%;
+}
+
+.footer-stuff {
+    width: auto;
+    padding: 0 15px;
+} */
+
+.page-section {
+    min-height: 100vh;
+    background-color: rgb(175, 175, 175);
+}
+
+.home-intro {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto;
+    width: 80%;
+}
+
+#hello {
+    font-size: 2.5rem;
+    color: rgb(25, 25, 25);
+}
+
+#description {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 770px) {
+    aside {
+        display: none;
+    }
+}
