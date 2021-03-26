@@ -21,78 +21,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <title>Alex Rotaru</title>
 </head>
 
 <body>
     <div class="row">
-        <aside class="col-md-3 col-xl-2 pe-0">
-            <div class="personal-info">
-                <img class="mt-5 personal-img img-fluid"
-                    src="https://res.cloudinary.com/duodq6ue9/image/upload/v1616670673/personal-page/rotarul_hrbagy.png"
-                    alt="">
-                <h1 class="mt-3 name text-center">Alex Rotaru</h1>
-                <div class="row justify-content-center">
-                    <a class="account-link text-center col-2"
-                        href="https://www.linkedin.com/in/ionut-alexandru-rotaru-838410152/" target='_blank'><i
-                            class="fab fa-linkedin"></i></a>
-                    <a class="account-link text-center col-2" href="https://twitter.com/airotaru" target='_blank'><i
-                            class="fab fa-twitter-square"></i></a>
-                    <a class="account-link text-center col-2" href="https://github.com/alexrotaru15" target='_blank'><i
-                            class="fab fa-github-square"></i></a>
-                </div>
-            </div>
-            <nav class="navbar mt-5">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">
-                            <div class="row">
-                                <div class="col-2 link-logo"><i class="fas fa-user"></i></div>
-                                <div class="col link-name">About</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">
-                            <div class="row">
-                                <div class="col-2 link-logo"><i class="fas fa-university"></i></div>
-                                <div class="col link-name">Education</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#work-experience">
-                            <div class="row">
-                                <div class="col-2 link-logo"><i class="fas fa-building"></i></div>
-                                <div class="col link-name">Work Experience</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">
-                            <div class="row">
-                                <div class="col-2 link-logo"><i class="fas fa-user-edit"></i></div>
-                                <div class="col link-name">Projects</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">
-                            <div class="row">
-                                <div class="col-2 link-logo"><i class="fas fa-envelope"></i></div>
-                                <div class="col link-name">Contact</div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- <footer class="footer mt-auto py-3">
-                <div class="container footer-stuff">
-                    alexrotaru15
-                </div>
-            </footer> -->
+        <aside class="col-md-3 col-xl-2 m-0 p-0 ps-2">
+            {% include 'navbar.html' %}
         </aside>
-        <div class="col-md-9 col-xl-10 p-0">
+        <div class="page-parent col-md-9 col-xl-10 m-0 p-0">
             {% with messages = get_flashed_messages() %}
             {% if messages %}
             <ul class=flashes>
@@ -102,139 +40,12 @@
             </ul>
             {% endif %}
             {% endwith %}
-            <section class="row align-items-center page-section m-0" id="about">
-                <div class="home-intro">
-                    <div id="hello">Hello!</div>
-                    <div>My name is Alex Rotaru.</div>
-                    <p id="description">
-                        I am currently working as a Scriptwriter for Ipsos Interactive Services. In my
-                        free time I am
-                        also working on a Python portfolio focused on back-end development.
-                    </p>
-                    <img class="img-fluid"
-                        src="https://res.cloudinary.com/duodq6ue9/image/upload/c_scale,w_150/v1616693731/personal-page/html_logo_rpwdei.png"
-                        alt="html logo">
-                    <img class="img-fluid"
-                        src="https://res.cloudinary.com/duodq6ue9/image/upload/c_scale,w_150/v1616693835/personal-page/css_logo_rlko4q.png"
-                        alt="css logo">
-                    <img class="img-fluid"
-                        src="https://res.cloudinary.com/duodq6ue9/image/upload/c_scale,w_150/v1616694304/personal-page/js_logo_ympi13.png"
-                        alt="js logo">
-                    <img src="https://res.cloudinary.com/duodq6ue9/image/upload/c_scale,w_150/v1616694380/personal-page/bootstrap_logo_brsjcs.png"
-                        alt="bootstrap logo" class="img-fluid">
-                    <img src="https://res.cloudinary.com/duodq6ue9/image/upload/c_scale,w_150/v1616694482/personal-page/python_logo_n8izef.png"
-                        alt="python logo" class="img-fluid">
-                    <img src="https://res.cloudinary.com/duodq6ue9/image/upload/c_scale,w_150/v1616694574/personal-page/flask_logo_dqbhli.png"
-                        alt="flask logo" class="img-fluid">
-                    <img src="https://res.cloudinary.com/duodq6ue9/image/upload/v1616694682/personal-page/sqlalchemy_logo_ag8qvp.png"
-                        alt="sqlalchemy logo" class="img-fluid">
-                </div>
-            </section>
-            <section class="page-section" id="education">
-                <article>
-                    <img src="https://res.cloudinary.com/duodq6ue9/image/upload/v1616673698/personal-page/ub_logo_r4zdem.png"
-                        alt="universitatea din bucuresti logo">
-                    <h3>Universitatea din București</h3>
-                    <p>Facultatea de Matematică și Informatică</p>
-                    <p>Informatică ID</p>
-                    <p>2017-2020</p>
-                </article>
-                <article>
-                    <img src="https://res.cloudinary.com/duodq6ue9/image/upload/v1616673467/personal-page/utcn_logo_uc6an5.png"
-                        alt="utcn logo">
-                    <h3>Universitatea Tehnică din Cluj-Napoca</h3>
-                    <p>Facultatea de Automatică și Calculatoare</p>
-                    <p>2015-2017</p>
-                </article>
-                <article>
-                    <img src="https://res.cloudinary.com/duodq6ue9/image/upload/v1616674225/personal-page/cncc_logo_iphcmh.png"
-                        alt="carabella logo">
-                    <h3>Colegiul Național Constantin Carabella, Târgoviște</h3>
-                    <p>Matematică-Informatică</p>
-                    <p>2010-2014</p>
-                </article>
-            </section>
-            <section class="page-section" id="work-experience">
-                <article>
-                    <img src="https://res.cloudinary.com/duodq6ue9/image/upload/v1616679788/personal-page/iis_logo_ru9itp.png"
-                        alt="ipsos logo">
-                    <h3>Ipsos Interactive Services</h3>
-                    <p>Assocciate Scriptwriter, Scriptwriter</p>
-                    <ul>
-                        <li>Created online surveys using SPSS Dimensions</li>
-                        <li>Used pre-existed layouts and created new ones using HTML, CSS and JavaScript</li>
-                        <li>Trained new colleagues</li>
-                    </ul>
-                </article>
-                <article>
-                    <img src="https://res.cloudinary.com/duodq6ue9/image/upload/c_scale,w_150/v1616677201/personal-page/ea_logo_kyrsev.png"
-                        alt="electronic arts logo">
-                    <h3>Electronic Arts</h3>
-                    <p>QA Tester, QA Tester II</p>
-                    <ul>
-                        <li>Part of the Need For Speed Payback team</li>
-                        <li>Created testing scenarios and performed quality checks on the game</li>
-                        <li>Checked for bugs and submitted them in Jira</li>
-                        <li>Checked if the bugs are fixed</li>
-                    </ul>
-                </article>
-            </section>
-            <section class="page-section" id="projects">
-                <h3>Projects</h3>
-            </section>
-            <section class="page-section" id="contact">
-                <p>Email: alexrotaru1595@gmail.com</p>
-                <p>Phone: +40734325633</p>
-                <form action="{{ url_for('home') }}" method="POST">
-                    {{ form.csrf_token }}
-                    <div>
-                        <div class="row my-3">
-                            <div class="col-sm-3">
-                                {{ form.name.label(class="form-label") }}
-                            </div>
-                            <div class="col-sm-9">
-                                {{ form.name(class="form-control") }}
-                                {% if form.name.errors %}
-                                {% for error in form.name.errors %}
-                                <p style="color:red;">{{ error }}</p>
-                                {% endfor %}
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="row my-3">
-                            <div class="col-sm-3">
-                                {{ form.email.label(class="form-label") }}
-                            </div>
-                            <div class="col-sm-9">
-                                {{ form.email(class="form-control") }}
-                                {% if form.email.errors %}
-                                {% for error in form.email.errors %}
-                                <p style="color:red;">{{ error }}</p>
-                                {% endfor %}
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="row my-3">
-                            <div class="col-sm-3">
-                                {{ form.message.label(class="form-label") }}
-                            </div>
-                            <div class="col-sm-9">
-                                {{ form.message(class="form-control") }}
-                                {% if form.message.errors %}
-                                {% for error in form.message.errors %}
-                                <p style="color:red;">{{ error }}</p>
-                                {% endfor %}
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    {{ form.submit(class="btn btn-light") }}
-                </form>
-            </section>
+
+            {% include 'about.html' %}
+            {% include 'education.html' %}
+            {% include 'work_experience.html' %}
+            {% include 'projects.html' %}
+            {% include 'contact.html' %}
         </div>
     </div>
 </body>
