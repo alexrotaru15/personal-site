@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <title>Alex Rotaru</title>
 </head>
 
@@ -31,23 +30,19 @@
             {% include 'navbar.html' %}
         </aside>
         <div class="page-parent col-md-9 col-xl-10 m-0 p-0">
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            <ul class=flashes>
-                {% for message in messages %}
-                {{ message }}
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {% endwith %}
-
             {% include 'about.html' %}
+            <hr class="line-between">
             {% include 'education.html' %}
+            <hr class="line-between">
             {% include 'work_experience.html' %}
+            <hr class="line-between">
             {% include 'projects.html' %}
+            <hr class="line-between">
             {% include 'contact.html' %}
         </div>
     </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 
 </html>

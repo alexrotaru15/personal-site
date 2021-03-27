@@ -13,11 +13,6 @@ body {
     padding: 0px;
 }
 
-.page-parent {
-    /* overflow-y: scroll; */
-    box-sizing: content-box;
-}
-
 aside {
     background-color: #000;
     min-height: 100vh;
@@ -66,10 +61,17 @@ aside {
     padding-left: 10px;
 }
 
+.page-parent {
+    overflow-y: scroll;
+    /* box-sizing: content-box; */
+}
+
 .page-section {
     min-height: 100vh;
+    height: 100%;
     background-color: rgb(225, 225, 225);
     margin: 0;
+    width: 100%;
 }
 
 .home-intro {
@@ -81,7 +83,7 @@ aside {
 
 .section-title {
     text-decoration: underline;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     font-size: 1.8rem;
 }
 
@@ -110,19 +112,45 @@ aside {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+.project-btn {
+    width: 100%;
+}
+
+.flashes {
+    color: rgb(22, 201, 46);
+}
+
+.line-between {
+    display: none;
+}
 
 @media (max-width: 770px) {
     aside {
         display: none;
     }
 
-    .univ-article {
+    .hide-section {
+        display: inline-block;
+    }
+
+    .line-between {
+        border: 2px solid blue;
+        border-radius: 20px;
         /* width: 80%; */
+        padding: 0;
+        margin: 0 auto;
+        display:block ;
     }
 }
 
 @media (min-width: 1000px) {
     .univ-article {
         width: 80%;
+    }
+}
+
+@media (max-width: 575px) {
+    .projects {
+        text-align: center;
     }
 }

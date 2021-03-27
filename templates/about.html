@@ -1,4 +1,13 @@
-<section class="row align-items-center page-section" id="about">
+<section class="row align-items-center page-section p-0" id="about">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
     <div class="col-lg-10 col-xl-8">
         <div class="home-intro">
             <div id="hello">Hello!</div>
