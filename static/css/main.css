@@ -72,6 +72,7 @@ aside {
     background-color: rgb(225, 225, 225);
     margin: 0;
     width: 100%;
+    overflow-y: hidden;
 }
 
 .home-intro {
